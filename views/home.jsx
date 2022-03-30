@@ -7,9 +7,9 @@ function home() {
     return (
         <Def>
             <main>
-                <h1>HOME</h1>
+                <h1>REST-Rant</h1>
                 <div>
-                    <img src="/public/images/panini.jpg" alt="Panini" />
+                    <img src="/images/panini.jpg" alt="Panini" />
                     <div>
                         Photo by <a href="https://unsplash.com/@ellaolsson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ella Olsson</a> on <a href="https://unsplash.com/s/photos/free-food?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
                     </div>
