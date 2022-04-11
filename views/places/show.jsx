@@ -44,10 +44,6 @@ function show (data) {
                 </h4>
             </div>
             <div>
-                <h2>Comments</h2>
-                {comments}
-            </div>
-            <div>
                 <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
                     Edit
                 </a>     
@@ -57,6 +53,33 @@ function show (data) {
                     </button>
                 </form> 
             </div>
+            <div>
+                <h2>Comments</h2>
+                {comments}
+            </div>
+            <div>
+              <h2> Got Your Own Rant or Rave?</h2>
+              <form method="POST" action="/places/:id/comment">
+                <div className="form-group">
+                  <label htmlFor="content">Content</label>
+                  <input className="form-control" id="content" name="content" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="Author">Author</label>
+                  <input className="form-control" id="Author" name="Author" />
+                </div>
+               
+                <label htmlFor="starRating">Star Rating</label>
+                <input className="form-control" type="range" id="starRating" name="starRating" min="1" max="5" />
+               
+                
+                <label htmlFor="rant">Rant?</label>
+                <input className="form-control" type="checkbox" id="rant" name="rant" />
+                
+                <input className="btn btn-primary" type="submit" value="Add Comment" />
+              </form>
+            </div>
+
           </main>
         </Def>
     )
