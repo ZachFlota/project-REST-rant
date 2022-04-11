@@ -49,14 +49,14 @@ router.delete('/:id', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+  res.render('places/edit')
 })
 
 router.post('/:id/comment', (req, res) => {
   console.log(req.body)
   db.Place.findById(req.params.id)
   .then(place => {
-      db.Comments.create(req.body)
+      db.comments.create(req.body)
       .then(comment => {
           place.comments.push(comment.id)
           place.save()

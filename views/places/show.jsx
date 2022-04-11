@@ -24,62 +24,62 @@ function show (data) {
     return (
         <Def>
           <main>
-          <div className="row">
-            <div className="col-sm-6">
-                <img src={data.place.pic} alt={data.place.name} />
-                <h3>
-                    Located in {data.place.city}, {data.place.state}
-                 </h3>
+            <div className="row">
+                <div className="col-sm-6">
+                    <img src={data.place.pic} alt={data.place.name} />
+                    <h3>
+                        Located in {data.place.city}, {data.place.state}
+                    </h3>
+                </div>
+                <div className="col-sm-6">
+                    <h1>{ data.place.name }</h1>
+                    <h2>Rating</h2>
+                    <h3 className="inactive">Not Yet Rated</h3>
+                    <br></br>
+                    <h2>Description</h2>
+                    <h3>
+                    {data.place.showEstablished()}
+                    </h3>
+                    <h4>
+                    Serving {data.place.cuisines}
+                    </h4>
+                    <br></br>
+                    <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a> 
+                    <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                        <button type="submit" className="btn btn-danger">Delete</button>
+                    </form> 
+                </div>
             </div>
-            <div className="col-sm-6"></div>
-                <h1>{ data.place.name }</h1>
-                <h2>Rating</h2>
-                <p>Currently Unrated</p>
-                <h2>Description</h2>
-                <h3>
-                {data.place.showEstablished()}
-                </h3>
-                <h4>
-                Serving {data.place.cuisines}
-                </h4>
-            </div>
-            <div>
-                <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
-                    Edit
-                </a>     
-                <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
-                    <button type="submit" className="btn btn-danger">
-                        Delete
-                    </button>
-                </form> 
-            </div>
-            <div>
-                <h2>Comments</h2>
-                {comments}
-            </div>
-            <div>
+              <hr></hr>
+              <h2>Comments</h2>
+              <div className="row">
+              {comments}
+              </div>
+              <hr></hr>
               <h2> Got Your Own Rant or Rave?</h2>
               <form method="POST" action="/places/:id/comment">
-                <div className="form-group">
-                  <label htmlFor="content">Content</label>
-                  <input className="form-control" id="content" name="content" />
+                <div className="row">
+                  <div className="form-group col-sm-12">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" className="form-control"></textarea>
+                  </div>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="Author">Author</label>
-                  <input className="form-control" id="Author" name="Author" />
+                <div className="row">
+                  <div className="form-group col-sm-4">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" className="form-control"></input>
+                  </div>
+                  <div className="form-group col-sm-4">
+                    <label for="stars">Star Rating</label>
+                    <input type="range" step="0.5" min="1" max="5" id="stars" name="stars" className="form-range"></input>
+                  </div>
+                  <div className="form-group col-sm-2">
+                    <label for="rant">Rant?</label>
+                    <input type="checkbox" id="rant" className="form-check-input"></input>
+                  </div>
                 </div>
-               
-                <label htmlFor="starRating">Star Rating</label>
-                <input className="form-control" type="range" id="starRating" name="starRating" min="1" max="5" />
-               
-                
-                <label htmlFor="rant">Rant?</label>
-                <input className="form-control" type="checkbox" id="rant" name="rant" />
-                
-                <input className="btn btn-primary" type="submit" value="Add Comment" />
-              </form>
-            </div>
-
+                <input type="submit" className="btn btn-primary" value="Add Comment"></input>
+              </form>            
           </main>
         </Def>
     )

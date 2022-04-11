@@ -3,6 +3,10 @@ h1 {
   color: cornflowerblue;
 }
 
+h2 {
+  color: lightblue;
+}
+
 nav {
   background-color: cornflowerblue;
   padding: 10px;
@@ -36,5 +40,14 @@ body {
 main {
   margin-right: 20px;
   margin-left: 20px;
+  padding: 20px;
   background-color: white;
+}
+
+form {
+  display: inline;
+}
+
+img {
+  height: 20em;
 }
