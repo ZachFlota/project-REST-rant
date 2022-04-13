@@ -5,14 +5,14 @@ db.Place.create([{
     city: 'Seattle',
     state: 'WA',
     cuisines: 'Thai, Pan-Asian',
-    pic: '../public/images/thai.jpg',
+    pic: '/images/thai.jpg',
     founded: 1989
 }, {
     name: 'Coding Cat Cafe',
     city: 'Phoenix',
     state: 'AZ',
     cuisines: 'Coffee, Bakery',
-    pic: './public/images/coffee.jpg',
+    pic: '/images/coffee.jpg',
     founded: 2020
 }])
 .then(() => {
