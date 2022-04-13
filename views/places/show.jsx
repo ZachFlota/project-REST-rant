@@ -62,8 +62,8 @@ function show (data) {
                     Serving {data.place.cuisines}
                     </h4>
                     <br></br>
-                    <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a> 
-                    <form method="POST" action={`/places/${data.id}?_method=DELETE`}> 
+                    <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">Edit</a> 
+                    <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}> 
                         <button type="submit" className="btn btn-danger">Delete</button>
                     </form> 
                 </div>
@@ -75,7 +75,7 @@ function show (data) {
               </div>
               <hr></hr>
               <h2> Got Your Own Rant or Rave?</h2>
-              <form method="POST" action="/:id/comment">
+              <form method="POST" action={`/places/${data.place.id}/comment?_method=POST`}>
                 <div className="row">
                   <div className="form-group col-sm-12">
                     <label htmlFor="content">Content</label>
